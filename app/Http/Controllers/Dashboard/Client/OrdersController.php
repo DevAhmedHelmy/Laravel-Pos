@@ -18,7 +18,8 @@ class OrdersController extends Controller
     public function create (Client $client)
     {
         $categories = Category::all();
-        return view('admin.clients.orders.create',compact('client','categories'));
+        $orders = $client->orders()->with('products')->paginate(5);
+        return view('admin.clients.orders.create',compact('client','categories','orders'));
     }
 
     public function store (Request $request, Client $client)
