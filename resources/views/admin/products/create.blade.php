@@ -4,7 +4,7 @@
     <h1>@lang('site.dashboard')</h1>
     <ol class="breadcrumb">
         <li><a href="{{route('dashboard.welcome')}}"><i class="fa fa-dashboard"></i> @lang('site.dashboard')</a></li>
-        <li><a href="{{route('dashboard.products')}}"><i class="fa fa-users"></i> @lang('site.products')</a></li>
+        <li><a href="{{route('dashboard.products.index')}}"><i class="fa fa-users"></i> @lang('site.products')</a></li>
         <li class="active"><i class="fa fa-users"></i> @lang('site.add')</li>
         
     </ol>
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                         @include('admin.layouts.errors')
-                    <form action="{{ route('dashboard.store_products') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard.products.store') }}" method="post" enctype="multipart/form-data">
 
                         {{ csrf_field() }}
                         

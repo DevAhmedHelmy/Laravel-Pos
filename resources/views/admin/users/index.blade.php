@@ -34,7 +34,7 @@
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> @lang('site.search')
                                 </button>
                                 @if (auth()->user()->hasPermission('create_users'))
-                                    <a class="btn btn-primary" href="{{route('dashboard.create_users')}}">
+                                    <a class="btn btn-primary" href="{{route('dashboard.users.create')}}">
                                         <i class="fa fa-plus"></i> @lang('site.add')</a>
                                 @else
                                     <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('site.add')</a>
@@ -71,7 +71,7 @@
                               <td>
                                     {{-- {{ $user->image_path }} --}}
                                     @if (auth()->user()->hasPermission('read_users'))
-                                        <a href="{{route('dashboard.show_users',$user->id)}}" class="btn btn-info" 
+                                        <a href="{{route('dashboard.users.show',$user->id)}}" class="btn btn-info" 
                                             data-toggle="tooltip" data-placement="top" title="@lang('site.read')">
                                             <i class="fa fa-eye fa-1x"></i>
                                         </a>

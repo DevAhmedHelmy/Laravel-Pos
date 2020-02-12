@@ -48,7 +48,7 @@ function()
 		Route::get('/orders/{order}/products', 'OrdersController@products')->name('orders.products');
 
 		//user routes
-		Route::resource('users', 'UserController')->except(['show']);
+		Route::resource('users', 'UserController');
 
 		
 	});
